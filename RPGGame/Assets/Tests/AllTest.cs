@@ -8,6 +8,6 @@ public void BasicTest()
 
 {
    
-      Assert.Pass();
+      Assert.Fail();
     }
 }
