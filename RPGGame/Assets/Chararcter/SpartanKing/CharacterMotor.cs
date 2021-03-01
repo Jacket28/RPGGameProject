@@ -20,6 +20,7 @@ public class CharacterMotor : MonoBehaviour
     CapsuleCollider playerCollider;
 
     // Start is called before the first frame update
+    test
     void Start()
     {
         animations = gameObject.GetComponent<Animation>();
