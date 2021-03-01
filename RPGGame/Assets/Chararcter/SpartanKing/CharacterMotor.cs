@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterMotor : MonoBehaviour
 {
+    
 
     Animation animations;
 
@@ -20,12 +22,14 @@ public class CharacterMotor : MonoBehaviour
     CapsuleCollider playerCollider;
 
     // Start is called before the first frame update
-    test
+    
+
     void Start()
     {
         animations = gameObject.GetComponent<Animation>();
         playerCollider = gameObject.GetComponent<CapsuleCollider>();
 
+        throw new Exception();
 
     }
 
