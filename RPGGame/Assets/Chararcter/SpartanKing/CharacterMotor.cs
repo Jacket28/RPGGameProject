@@ -29,8 +29,6 @@ public class CharacterMotor : MonoBehaviour
         animations = gameObject.GetComponent<Animation>();
         playerCollider = gameObject.GetComponent<CapsuleCollider>();
 
-        throw new Exception();
-
     }
 
     bool IsGrounded()
