@@ -18,3 +18,17 @@ jobs:
         # Activate unity
         - name: Activate Unity
           run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -manualLicenseFile .github/Unity_v2018.x.ulf || exit 0
+          
+        - name: Unity - Builder
+          uses: game-ci/unity-builder@v2.0-alpha-6
+          env:
+            UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          with:
+            targetPlatform: StandaloneWindows64
+            
+        - name: Artifacts Creation
+        - uses: actions/upload-artifact@v2
+          with:
+            name: Build
+            path: build
+
