@@ -11,6 +11,7 @@ jobs:
     steps:
         - name: Checkout Project
           uses: actions/checkout@v1
+            echo "git" >> $GITHUB_PATH
 
         - name: Decrypt the license file
           run: openssl aes-256-cbc -d -in .github/Unity_v2018.x.ulf.enc -k ${{ secrets.UNITY_LICENSE_DECRYPT_KEY }} >> .github/Unity_v2018.x.ulf
