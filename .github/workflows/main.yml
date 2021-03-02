@@ -11,10 +11,6 @@ jobs:
     steps:
         - name: Checkout Project
           uses: actions/checkout@v1
-          
-        - name: Fetch unshallow
-          with:
-           args: install --prefer-dist --no-dev
 
         - name: Decrypt the license file
           run: openssl aes-256-cbc -d -in .github/Unity_v2018.x.ulf.enc -k ${{ secrets.UNITY_LICENSE_DECRYPT_KEY }} >> .github/Unity_v2018.x.ulf
@@ -28,6 +24,7 @@ jobs:
           env:
             UNITY_LICENSE: ${{ secrets.UNITY_LICENSE_DECRYPT_KEY }}
           with:
+            args: install --prefer-dist --no-dev
             targetPlatform: StandaloneWindows64
             
         - name: Artifacts Creation
