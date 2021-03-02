@@ -21,11 +21,10 @@ jobs:
           
         #Build Windows
         - name: Build Windows Player
-        run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -noUPM -logFile -projectPath . -buildWindows64Player ./bin-win64/CISample.exe
-        
-        - name: Archive Windows Build
-        uses: actions/upload-artifact@v1
-        with:
-            name:CISAmpleWin64Binary
+          run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -noUPM -logFile -projectPath . -buildWindows64Player ./bin-win64/CISample.exe
+      
+        - name : Archive Windows Build
+          uses: actions/upload-artifact@v1
+          with:
+            name: CISAmpleWin64Binary
             path: ./bin-win64
-            
