@@ -5,7 +5,6 @@ on:
     - cron: '0 4 * * 1'
 
 jobs:
-   
   build:
     runs-on: ubuntu-latest
     container: gableroux/unity3d:2018.2.21f1
@@ -14,6 +13,8 @@ jobs:
           uses: actions/checkout@v1
           with :
             args: install --prefer-dist --no-dev
+            run:
+             git fetch --unshallow --tags
 
         - name: Decrypt the license file
           run: openssl aes-256-cbc -d -in .github/Unity_v2018.x.ulf.enc -k ${{ secrets.UNITY_LICENSE_DECRYPT_KEY }} >> .github/Unity_v2018.x.ulf
