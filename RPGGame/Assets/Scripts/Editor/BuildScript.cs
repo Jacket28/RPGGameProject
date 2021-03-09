@@ -7,7 +7,7 @@ public class BuildScript
 {
     static void PerformBuild()
     {
-        string[] defaultScene = { "Assets/Scenes/MainScene.Unity" };
+        string[] defaultScene = { "Assets/Scenes/Game.Unity" };
         BuildPipeline.BuildPlayer(defaultScene, "./builds/RPGGame.exe", 
             BuildTarget.StandaloneWindows, BuildOptions.None);
     }
