@@ -1,5 +1,5 @@
 # RPGGameProject
-This project has been made during the 646-2 module.
+This project has been made during the 646-2 module at the University of Applied Sciences Western Switzerland.
 
 # Team
 
